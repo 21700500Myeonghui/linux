@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "21500830.h"
 #include "21700500.h"
 
@@ -14,6 +15,7 @@ int main(){
 	int is_number;
 	int reverse;
 	int sort;
+	bool is_Prime;
 
 	while(fgets(input,sizeof(input), stdin)!=NULL){
 		
@@ -38,7 +40,9 @@ int main(){
 		if(is_number){
 		 reverse=reverse_digits(atoi(input));
 		 sort=sort_digits(input);
+		 is_Prime=isPrime(atoi(input));
 		 printf("reverse> %d\nsort> %d\n",reverse, sort);
+		 printf("isPrime> %s\n",is_Prime?"True":"False");
 		 //printf("reverse> %d\n",reverse);
 		}
 
