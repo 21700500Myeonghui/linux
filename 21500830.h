@@ -2,5 +2,6 @@
 #define _21500830_H_
 
 int reverse_digits(int );
+char* binarized(int );
 
 #endif

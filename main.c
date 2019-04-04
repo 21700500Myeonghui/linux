@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+#include <malloc.h>
 #include "21500830.h"
 #include "21700500.h"
 
@@ -14,6 +15,7 @@ int main(){
 	int is_number;
 	int reverse;
 	int sort;
+	char* binary;
 
 	while(fgets(input,sizeof(input), stdin)!=NULL){
 		
@@ -37,9 +39,14 @@ int main(){
 
 		if(is_number){
 		 reverse=reverse_digits(atoi(input));
+		 binary = binarized(atoi(input));
 		 sort=sort_digits(input);
 		 printf("reverse> %d\nsort> %d\n",reverse, sort);
-		 //printf("reverse> %d\n",reverse);
+		 printf("binary> ");
+		 for(int i=0; binary[i]!=NULL; i++)
+			 printf("%c",binary[i]);
+		 printf("\n");
+		 free(binary);
 		}
 
 		
