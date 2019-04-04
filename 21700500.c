@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 int compares(const void *a, const void *b);
 
@@ -25,3 +26,15 @@ int compares(const void *a, const void *b)
 		return 0;
 }
 
+bool isPrime(int n){
+	int i,count=0;
+
+	for(i=2; i<n; i++){
+		if(n%i==0){
+			count++;}
+	}	
+	if(count==0)
+		return true;
+	else
+		return false;
+}

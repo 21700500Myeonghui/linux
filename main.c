@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <malloc.h>
+#include <stdbool.h>
 #include "21500830.h"
 #include "21700500.h"
 
@@ -16,6 +17,7 @@ int main(){
 	int reverse;
 	int sort;
 	char* binary;
+	bool is_Prime;
 
 	while(fgets(input,sizeof(input), stdin)!=NULL){
 		
@@ -41,12 +43,15 @@ int main(){
 		 reverse=reverse_digits(atoi(input));
 		 binary = binarized(atoi(input));
 		 sort=sort_digits(input);
+		 is_Prime=isPrime(atoi(input));
 		 printf("reverse> %d\nsort> %d\n",reverse, sort);
 		 printf("binary> ");
 		 for(int i=0; binary[i]!=NULL; i++)
 			 printf("%c",binary[i]);
 		 printf("\n");
 		 free(binary);
+		 printf("isPrime> %s\n",is_Prime?"True":"False");
+		 //printf("reverse> %d\n",reverse);
 		}
 
 		
